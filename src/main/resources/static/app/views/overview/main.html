@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="/app/styles/overview/overview.css"/>
+
+<div class="page-title">
+    <h2>Open Notes</h2>
+</div>
+
+<div class="main">
+
+    <div class="sidebar">
+        <div class="sidebar-category">
+            <h3>Tags</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="tag in tags" ng-click="toggleTag(tag);" ng-class="{'sidebar-item-selected': tag.selected}">
+            #{{tag.name}}
+        </div>
+
+        <div class="sidebar-category">
+            <h3>People</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="person in people" ng-click="togglePerson(person);" ng-class="{'sidebar-item-selected': person.selected}">
+            @{{person.name}}
+        </div>
+
+        <div class="sidebar-category">
+            <h3>Severity</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="severity in severities">
+            !{{severity.name}}
+        </div>
+    </div>
+
+    <div class="content">
+        <div>
+            <form>
+                <input type="text" name="note" ng-model="description" ng-enter="createNote()">
+                <button id="create_button" type="button" class="btn btn-success" ng-click="createNote()">create</button>
+            </form>
+        </div>
+
+        <div class="content-item" ng-repeat="note in visibleNotes | orderBy:'creation':'true'">
+            <div class="content-item-text">
+                <div class="note-text">
+                    <textedit text="{{note.description}}" uid="{{note.id}}"></textedit>
+                </div>
+                <div class="note-date">
+                    {{note.creation | date:'yyyy-MM-dd HH:mm'}}
+                </div>
+            </div>
+            <div class="content-item-delete" ng-confirm="markSolved(note)" title="Mark note as solved">
+                x
+            </div>
+        </div>
+    </div>
+
+</div>

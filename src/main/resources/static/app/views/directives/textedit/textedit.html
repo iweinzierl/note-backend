@@ -1,0 +1,6 @@
+<div ng-show="mode === 'text'" ng-click="toggle()">
+    {{text}}
+</div>
+<div ng-show="mode === 'edit'">
+    <input type="text" id="{{uid}}" ng-model="edit" ng-enter="submit()" ng-blur="onBlur()">
+</div>

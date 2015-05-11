@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html ng-app="noteapp">
+    <head>
+        <title>NoteApp</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/app/styles/main.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li><a ng-href="#">Open</a></li>
+                    <li><a ng-href="#/trash">Trash</a></li>
+                    <li><a ng-href="/logout">Logout</a></li>
+                </ul>
+                <h3 class="text-muted">gitnoteapp</h3>
+            </div>
+            <div class="header-border">
+                <div class="header-border-blue"></div>
+                <div class="header-border-orange"></div>
+                <div class="header-border-green"></div>
+                <div class="header-border-red"></div>
+                <div class="header-border-lila"></div>
+            </div>
+
+            <div ng-view></div>
+        </div>
+        
+        <script src="/libs/angular/angular.js"></script>
+        <script src="/libs/angular-animate/angular-animate.js"></script>
+        <script src="/libs/angular-mocks/angular-mocks.js"></script>
+        <script src="/libs/angular-resource/angular-resource.js"></script>
+        <script src="/libs/angular-route/angular-route.js"></script>
+        <script src="/libs/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/libs/angular-scenario/angular-scenario.js"></script>
+        <script src="/libs/angular-touch/angular-touch.js"></script>
+        <script src="/libs/underscore/underscore-min.js"></script>
+
+        <!-- directives -->
+        <script src="/app/scripts/directives/directives.js"></script>
+        <script src="/app/scripts/directives/enter/enter.directive.js"></script>
+        <script src="/app/scripts/directives/textedit/textedit.directive.js"></script>
+        <script src="/app/scripts/directives/confirm/confirm.directive.js"></script>
+
+        <!-- services -->
+        <script src="/app/scripts/services/note.service.js"></script>
+
+        <!-- modules and application -->
+        <script src="/app/scripts/overview/main.js"></script>
+        <script src="/app/scripts/trash/main.js"></script>
+        <script src="/app/scripts/app.js"></script>
+
+    </body>
+</html>

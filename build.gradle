@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'inselhome-noteapp'
+    version =  '1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.data:spring-data-mongodb:1.6.0.RELEASE")
+    compile("org.springframework.security:spring-security-web")
+    compile("org.springframework.security:spring-security-config")
+
+
+    compile("net.sourceforge.nekohtml:nekohtml:1.9.21")
+
+    compile("org.apache.commons:commons-lang3:3.1")
+    compile("com.google.guava:guava-gwt:16.0.1")
+    compile("com.google.code.gson:gson:2.3")
+
+    testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+//tasks.withType(JavaCompile) {
+//    sourceCompatibility = "1.7"
+//    targetCompatibility = "1.7"
+//}

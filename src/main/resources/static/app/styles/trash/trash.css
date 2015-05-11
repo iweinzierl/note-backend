@@ -1,0 +1,155 @@
+.main {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 30px;
+
+    background-color: #8CD96E;
+}
+
+.sidebar {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+
+    border: 1px solid #e5e5e5;
+    background-color: #6BC9D6;
+
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sidebar-category {
+    margin-top: 10px;
+}
+
+.sidebar-category h3 {
+    margin-top: 10px;
+}
+
+.sidebar-item {
+    padding: 5px;
+    margin: 2px;
+
+    background: #5ABFF9;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.sidebar-item:hover {
+    background: white;
+    cursor: pointer;
+    -webkit-transition: background 0.5s;
+    transition: background 0.5s;
+}
+
+.sidebar-item-selected {
+    background: white;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+
+    margin-left: 10px;
+}
+
+.content form {
+    margin-bottom: 10px;
+}
+
+.content input {
+    height: 2.3125em;
+    width: 600px;
+
+    padding-left: 5px;
+}
+
+.content button {
+    height: 2.3125em;
+    width: 100px;
+}
+
+.content-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 705px;
+
+    padding-left: 5px;
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    background-color: #C5FFBC;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.content-item-text {
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content-item-delete {
+    width: 15px;
+
+    color: #B9C5CA;
+    font-size: 22px;
+    cursor: pointer;
+
+    float: right;
+
+    margin: auto 5px;
+
+    padding-right: 14px;
+
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.content-item-delete:hover {
+    color: red;
+}
+
+.note {
+    background-color: white;
+    padding: 5px;
+}
+
+.note-text {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.note-date {
+    width: 100%;
+
+    color: #808080;
+    font-size: 0.8em;
+}
+
+.note-date .left {
+    float: left;
+}
+
+.note-date .middle {
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+}
+
+.note-date .right {
+    float: left;
+}

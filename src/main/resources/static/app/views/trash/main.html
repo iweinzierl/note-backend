@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="/app/styles/trash/trash.css"/>
+
+<div class="page-title">
+    <h2>Solved Notes</h2>
+</div>
+
+<div class="main">
+
+    <div class="sidebar">
+        <div class="sidebar-category">
+            <h3>Tags</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="tag in tags" ng-click="toggleTag(tag);" ng-class="{'sidebar-item-selected': tag.selected}">
+            #{{tag.name}}
+        </div>
+
+        <div class="sidebar-category">
+            <h3>People</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="person in people" ng-click="togglePerson(person);" ng-class="{'sidebar-item-selected': person.selected}">
+            @{{person.name}}
+        </div>
+
+        <div class="sidebar-category">
+            <h3>Severity</h3>
+        </div>
+        <div class="sidebar-item" ng-repeat="severity in severities">
+            !{{severity.name}}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content-item" ng-repeat="note in visibleNotes | orderBy:'creation':'true'">
+            <div class="content-item-text">
+                <div class="note-text">
+                    {{note.description}}
+                </div>
+                <div class="note-date">
+                    <div class="left">{{note.creation | date:'yyyy-MM-dd HH:mm'}}</div>
+                    <div class="middle">-></div>
+                    <div class="right">{{note.solvedAt | date: 'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+            </div>
+            <div class="content-item-delete" ng-confirm="deleteNote(note)" title="Delete note">
+                x
+            </div>
+        </div>
+    </div>
+
+</div>

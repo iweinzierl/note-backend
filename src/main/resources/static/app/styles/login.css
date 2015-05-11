@@ -1,0 +1,162 @@
+body {
+    font-size: 16px;
+    background-color: #8CD96E;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+
+    padding-left: 15px;
+    padding-bottom: 19px;
+
+    background-color: #6BC9D6;
+}
+
+.header-border {
+    display: flex;
+    flex-direction: row;
+
+    height: 5px;
+    margin-bottom: 30px;
+}
+
+.header-border-blue {
+    flex-grow: 1;
+
+    height: 100%;
+    background-color: #09c;
+}
+
+.header-border-orange {
+    flex-grow: 1;
+
+    height: 100%;
+    background-color: #f80;
+}
+
+.header-border-green {
+    flex-grow: 1;
+
+    height: 100%;
+    background-color: #690;
+}
+
+.header-border-red {
+    flex-grow: 1;
+
+    height: 100%;
+    background-color: #c00;
+}
+
+.header-border-lila {
+    flex-grow: 1;
+
+    height: 100%;
+    background-color: #93c;
+}
+
+.space {
+    width: 100%;
+    height: 50px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    top: 200px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    padding: 0;
+
+    width: 400px;
+
+    background-color: #6BC9D6;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 50px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.form-row.error {
+    width: 95%;
+
+    vertical-align: middle;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-row.error span {
+    padding-right: 5px;
+}
+
+.form-row.title {
+    background-color: #09c;
+
+    margin: 0 0 15px;
+    padding-left: 10px;
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.form-row.title p {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: oblique;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.form-row.submit button {
+    width: 100%;
+
+    font-size: 1.2em;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    color: white;
+    background-color: #09c;
+    border-color: #09c;
+}
+
+input {
+    width: 100%;
+    height: 2.3125em;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    padding-left: 5px;
+
+    font-size: 16px;
+}
+
+input:focus {
+    box-shadow: 0 0 20px #690;
+}

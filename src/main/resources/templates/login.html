@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <title>NoteApp Login</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/app/styles/login.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a ng-href="#">Home</a></li>
+                    <li><a ng-href="#/about">About</a></li>
+                    <li><a ng-href="#">Contact</a></li>
+                </ul>
+                <h3 class="text-muted">gitnoteapp</h3>
+            </div>
+            <div class="header-border">
+                <div class="header-border-blue"></div>
+                <div class="header-border-orange"></div>
+                <div class="header-border-green"></div>
+                <div class="header-border-red"></div>
+                <div class="header-border-lila"></div>
+            </div>
+            <form action="/login" method="post">
+                <div class="space"></div>
+                <div class="login-form">
+                    <div class="form-row title">
+                        <p>Please Sign In</p>
+                    </div>
+                    <div th:if="${param.error != null}" class="form-row error alert alert-danger">
+                        <span class="glyphicon glyphicon-warning-sign"></span><span>Username or password incorrect.</span>
+                    </div>
+                    <div class="form-row username">
+                        <input type="text" id="username" name="username" placeholder="username">
+                    </div>
+                    <div class="form-row password">
+                        <input type="password" id="password" name="password" placeholder="password">
+                    </div>
+                    <div class="form-row submit">
+                        <button type="submit" class="btn btn-default">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
