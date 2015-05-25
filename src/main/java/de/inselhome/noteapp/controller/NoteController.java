@@ -115,6 +115,21 @@ public class NoteController {
     }
 
     @Secured("hasRole(USER)")
+    @RequestMapping(value = "/open/{id}", produces = "application/json", method = RequestMethod.POST)
+    public Note openSolved(@PathVariable final String id) {
+        LOGGER.info("Inbound Http request: POST - /note/open/{}", id);
+
+        Note solvedNote = noteRepository.findOne(id);
+
+        solvedNote.setSolvedAt(null);
+
+        noteRepository.save(solvedNote);
+        LOGGER.debug("open solved note in database: {}", solvedNote);
+
+        return solvedNote;
+    }
+
+    @Secured("hasRole(USER)")
     @RequestMapping(value = "/{id}", produces = "application/json", method = RequestMethod.DELETE)
     public Note delete(@PathVariable final String id) {
         LOGGER.info("Inbound Http request: DELETE - /note/{}", id);
